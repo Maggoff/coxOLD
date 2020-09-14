@@ -143,6 +143,25 @@ body{
   bottom: 60px;
 }
 
+.scrollbar{
+  margin: 0 10%;
+  position: absolute;
+  height: 2px;
+  width: 80%;
+  background-color: #ffffff;
+  bottom: 60px;
+  z-index: 1;
+}
+
+.scrollbar__line{
+  position: absolute;
+  height: 6px;
+  width: 14.3%;
+  background-color: orange;
+  left: 0%;
+  top: -2px;
+}
+
 .footer{
   z-index: 1;
   position: absolute;
