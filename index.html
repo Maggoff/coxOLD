@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COXIT.CO</title>
+  <link rel="stylesheet" href="css/fullpage.min.css">
+  <link rel="stylesheet" href="css/fullpage.min.css.map">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <img src="img/logo.svg" alt="Logo" class="header__logo">
+    <nav class="header__menu">
+      <a href="#" class="header__menu__item hover">services</a>
+      <a href="#" class="header__menu__item hover">careers</a>
+      <a href="#" class="header__menu__item hover">contacts</a>
+    </nav>
+  </header>
+  <section class="main" id="fullpage">
+    <div class="section">
+      <div class="slide">
+        <div class="container">
+          <div class="main__title">
+            We are professional software development team
+          </div>
+          <div class="main__text">
+            Development you've been dreaming of.
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="container">
+          <div class="main__title">
+            We are professional software development team2
+            <a href="#secondPage">Hai</a>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="container">
+          <div class="main__title">
+            We are professional software development team3
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="main__title">
+          Hello
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer__text">
+      All rights reserved
+    </div>
+    <div class="footer__text">
+      Join us on
+      <a href="#">Facebook</a>
+      and
+      <a href="#">Medium</a>
+    </div>
+  </footer>
+
+
+  <script src="js/fullpage.min.js"></script>
+  <script src="js/fullpage.min.js.map"></script>
+  <script>
+    new fullpage('#fullpage', {
+      //options here
+      anchors: ['firstPage', 'secondPage'],
+      autoScrolling: true,
+      scrollHorizontally: true,
+      slidesNavigation: true,
+      slidesNavPosition: 'bottom',
+      controlArrows: true,
+    });
+  </script>
+</body>
+
+</html>

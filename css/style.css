@@ -1,0 +1,174 @@
+*,
+::after,
+::before{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: #232323;
+}
+
+.header{
+  position: absolute;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 10%;
+  z-index: 1;
+}
+
+.header__menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__menu__item{
+  margin-left: 35px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.header__menu__item:first-child{
+  margin: 0;
+}
+
+.hover{
+  position: relative;
+}
+
+.hover::after{
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 0px;
+  background-color: orange;
+  transition: 0.15s;
+  left: 0;
+  bottom: 0;
+}
+
+.hover:hover::after{
+  width: 100%;
+}
+
+.main{
+  height: 80%;
+}
+
+.section{
+  height: 80%;
+}
+
+.container{
+  margin: 0 10%;
+}
+
+.main__title{
+  font-size: 47px;
+  line-height: 57px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ffffff;
+  width: 60%;
+}
+
+.main__text{
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.fp-slidesNav ul{
+  margin: 0 10%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fp-slidesNav ul li{
+  margin: 0;
+  width: 100%;
+}
+
+.fp-slidesNav ul li a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fp-slidesNav ul li a span{
+  margin: 0;
+  left: 0;
+  border-radius: 0;
+  height: 2px;
+  width: 100%;
+  transition: 0.4s;
+}
+
+.fp-slidesNav ul li a:hover span{
+  margin: 0;
+  left: 0;
+  border-radius: 0;
+  height: 2px;
+  width: 100%;
+}
+
+.fp-slidesNav ul li a.active span{
+  margin: 0;
+  left: 0;
+  border-radius: 0;
+  height: 6px;
+  width: 100%;
+  transition: 0.4s;
+  background-color: orange;
+}
+
+.fp-slidesNav ul li a:hover.active span{
+  margin: 0;
+  left: 0;
+  border-radius: 0;
+  height: 6px;
+  width: 100%;
+  background-color: orange;
+}
+
+.fp-slidesNav.fp-bottom{
+  bottom: 60px;
+}
+
+.footer{
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 80%;
+  padding: 10px 10% 25px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #232323;
+}
+
+.footer__text{
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.footer__text a{
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px solid #ffffff;
+  transition: 0.15s;
+}
+
+.footer__text a:hover{
+  border-bottom: 1px solid orange;
+}
