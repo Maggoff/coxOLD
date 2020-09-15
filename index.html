@@ -13,11 +13,13 @@
 <body>
 
   <header class="header">
-    <img src="img/logo.svg" alt="Logo" class="header__logo">
+    <a href="#firstPage" class="header__logo">
+      <img src="img/logo.svg" alt="Logo">
+    </a>
     <nav class="header__menu">
       <a href="#" class="header__menu__item hover">services</a>
       <a href="#" class="header__menu__item hover">careers</a>
-      <a href="#" class="header__menu__item hover">contacts</a>
+      <a href="#firstPage/6" class="header__menu__item hover contacts">contacts</a>
     </nav>
   </header>
   <section class="main" id="fullpage">
@@ -118,6 +120,7 @@
       scrollHorizontally: true,
       controlArrows: true,
       scrollingSpeed: 1000,
+      keyboardScrolling: false,
     });
   </script>
   <script src="js/main.js"></script>
