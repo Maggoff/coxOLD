@@ -34,18 +34,28 @@ $(document).ready(function () {
     };
     timer();
 
+    let disableClick = false;
+
     $('.fp-next').on('click', function () {
         clearTimeout(idTimer);
         timer();
         console.log(newLeft);
-        if (newLeft >= (6 * (100 / 7))) {
-            newLeft = 0;
-            $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000)
-            console.log(newLeft);
-        } else {
-            newLeft += (100 / 7);
-            $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000)
-            console.log(newLeft);
+
+        if (disableClick === false) {
+            disableClick = true;
+            if (newLeft >= (6 * (100 / 7))) {
+                newLeft = 0;
+                $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000, function () {
+                    disableClick = false;
+                });
+                console.log(newLeft);
+            } else {
+                newLeft += (100 / 7);
+                $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000, function () {
+                    disableClick = false;
+                });
+                console.log(newLeft);
+            }
         }
     });
 
@@ -53,14 +63,22 @@ $(document).ready(function () {
         clearTimeout(idTimer);
         timer();
         console.log(newLeft);
-        if (newLeft <= 3) {
-            newLeft = (6 * (100 / 7));
-            $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000)
-            console.log(newLeft);
-        } else {
-            newLeft -= (100 / 7);
-            $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000)
-            console.log(newLeft);
+
+        if(disableClick === false){
+            disableClick = true;
+            if (newLeft <= 3) {
+                newLeft = (6 * (100 / 7));
+                $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000, function(){
+                    disableClick = false;
+                });
+                console.log(newLeft);
+            } else {
+                newLeft -= (100 / 7);
+                $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000, function(){
+                    disableClick = false;
+                });
+                console.log(newLeft);
+            }
         }
     });
 
@@ -74,7 +92,7 @@ $(document).ready(function () {
     $('.contacts').on('click', function () {
         clearTimeout(idTimer);
         timer();
-        newLeft = (6*(100/7));
+        newLeft = (6 * (100 / 7));
         $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000);
     });
 
