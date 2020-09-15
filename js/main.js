@@ -10,7 +10,7 @@ $(document).ready(function () {
         console.log(i);
         if (slider[i].classList.contains('active')) {
             newLeft = (100 / 7) * i;
-            $('.scrollbar__line').animate({ left: newLeft + '%' }, 2000)
+            $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000)
         }
     }
 
@@ -38,14 +38,22 @@ $(document).ready(function () {
         clearTimeout(idTimer);
         timer();
         console.log(newLeft);
-        if (newLeft >= 100 - (100 / 7)) {
-            newLeft = 0;
-            $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000)
-            console.log(newLeft);
-        } else {
-            newLeft += 100 / 7;
-            $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000)
-            console.log(newLeft);
+        // if (newLeft >= 100 - (100 / 7)) {
+        //     newLeft = 0;
+        //     $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000)
+        //     console.log(newLeft);
+        // } else {
+        //     newLeft += 100 / 7;
+        //     $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000)
+        //     console.log(newLeft);
+        // }
+        for (let i = 0; i < slider.length; i++) {
+            console.log(slider[i].classList);
+            console.log(i);
+            if (slider[i].classList.contains('active')) {
+                newLeft = (100 / 7) * i;
+                $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000)
+            }
         }
     });
 
@@ -53,14 +61,22 @@ $(document).ready(function () {
         clearTimeout(idTimer);
         timer();
         console.log(newLeft);
-        if (newLeft <= 0) {
-            newLeft = (100 - (100 / 7));
-            $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000)
-            console.log(newLeft);
-        } else {
-            newLeft -= 100 / 7;
-            $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000)
-            console.log(newLeft);
+        // if (newLeft <= 0) {
+        //     newLeft = (100 - (100 / 7));
+        //     $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000)
+        //     console.log(newLeft);
+        // } else {
+        //     newLeft -= 100 / 7;
+        //     $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000)
+        //     console.log(newLeft);
+        // }
+        for (let i = 0; i < slider.length; i++) {
+            console.log(slider[i].classList);
+            console.log(i);
+            if (slider[i].classList.contains('active')) {
+                newLeft = (100 / 7) * i;
+                $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000)
+            }
         }
     });
 
