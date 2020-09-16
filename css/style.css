@@ -3,6 +3,7 @@
 ::before{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body{
@@ -11,7 +12,7 @@ body{
 
 .header{
   position: absolute;
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 25px 10%;
@@ -44,10 +45,10 @@ body{
 .hover::after{
   position: absolute;
   content: "";
-  height: 1px;
+  height: 2px;
   width: 0px;
   background-color: orange;
-  transition: 0.15s;
+  transition: 0.4s;
   left: 0;
   bottom: 0;
 }
@@ -65,7 +66,9 @@ body{
 }
 
 .container{
-  margin: 0 10%;
+  padding: 15% 10% 0;
+  height: 100%;
+  position: relative;
 }
 
 .main__title{
@@ -74,7 +77,7 @@ body{
   font-weight: 900;
   text-transform: uppercase;
   color: #ffffff;
-  width: 60%;
+  width: 50%;
 }
 
 .main__text{
@@ -87,65 +90,134 @@ body{
 .main__more{
   color: #ffffff;
   opacity: 0.4;
+  position: absolute;
+  bottom: 90px;
 }
 
-.fp-slidesNav ul{
-  margin: 0 10%;
+.help__items{
+  display: flex;
+  align-content: stretch;
   width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  z-index: 1;
+  position: absolute;
+  top: 354px;
+  bottom: 0;
 }
 
-.fp-slidesNav ul li{
-  margin: 0;
-  width: 100%;
+.help__item{
+  border: 1px dashed rgba(250, 140, 22, 0.5);
+  padding: 15px;
+  z-index: 2;
+  width: 25%;
+  height: 100%;
+  transition: 0.4s;
+  overflow: hidden;
+  position: relative;
 }
 
-.fp-slidesNav ul li a{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.help__item:hover{
+  background-color: #fa8c16;
 }
 
-.fp-slidesNav ul li a span{
-  margin: 0;
-  left: 0;
-  border-radius: 0;
-  height: 2px;
-  width: 100%;
+.help__item__number{
+  z-index: 1;
+  position: absolute;
+  font-size: 400px;
+  right: -80px;
+  top: 50%;
+  user-select: none;
+  color: transparent;
+  opacity: 0.25;
+  transform: translateY(-50%);
+  transition: 0.4s;
+  text-transform: capitalize;
+}
+
+.help__item:hover .help__item__number{
+  color: #ffffff;
+}
+
+.help__item__title{
+  z-index: 2;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-shadow: -5px -5px 10px rgba(8, 55, 219, 0.2), 5px 5px 20px rgba(0, 0, 0, 0.5);
   transition: 0.4s;
 }
 
-.fp-slidesNav ul li a:hover span{
-  margin: 0;
-  left: 0;
-  border-radius: 0;
-  height: 2px;
-  width: 100%;
+.help__item:hover .help__item__title,
+.help__item:focus .help__item__title{
+  margin-top: 0px;
+  text-shadow: -5px -5px 10px rgba(255, 77, 0, 0.2), 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
 
-.fp-slidesNav ul li a.active span{
-  margin: 0;
-  left: 0;
-  border-radius: 0;
-  height: 6px;
-  width: 100%;
+.help__item__text{
+  z-index: 2;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+.help__item__text__invise{
+  z-index: 2;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  color: transparent;
+  text-transform: capitalize;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  user-select: none;
   transition: 0.4s;
-  background-color: orange;
 }
 
-.fp-slidesNav ul li a:hover.active span{
-  margin: 0;
-  left: 0;
-  border-radius: 0;
-  height: 6px;
-  width: 100%;
-  background-color: orange;
+.help__item:hover .help__item__text__invise{
+  color: #ffffff;
+  user-select: auto;
 }
 
-.fp-slidesNav.fp-bottom{
-  bottom: 60px;
+.help__item__btn{
+  z-index: 2;
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+  color: transparent;
+  user-select: none;
+  transition: 0.4s;
+  text-decoration: none;
+}
+
+.help__item:hover .help__item__btn{
+  color: #ffffff;
+  user-select: auto;
+}
+
+.help__item:hover .help__item__btn.hover::after{
+  background-color: #ffffff;
+}
+
+.we__text{
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #ffffff;
+  width: 60%;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.we__btn{
+  font-size: 22px;
+  line-height: 26px;
+  padding-bottom: 6px;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .scrollbar{
@@ -155,7 +227,7 @@ body{
   width: 80%;
   background-color: #ffffff;
   bottom: 60px;
-  z-index: 1;
+  z-index: -1;
 }
 
 .scrollbar__line{
@@ -167,16 +239,27 @@ body{
   top: -2px;
 }
 
+.containerVertical{
+  padding: 5% 10%;
+}
+
+.team__text{
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: justify;
+}
+
 .footer{
   z-index: 1;
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 80%;
+  width: 100%;
   padding: 10px 10% 25px;
   display: flex;
   justify-content: space-between;
-  background-color: #232323;
 }
 
 .footer__text{

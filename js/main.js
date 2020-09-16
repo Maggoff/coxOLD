@@ -14,22 +14,28 @@ $(document).ready(function () {
         }
     }
 
+    
+
     function timer() {
         idTimer = setTimeout(function tick() {
+            let time = 0;
+
             if (newLeft != (100 - (100 / 7))) {
                 $('.main__more').animate({ opacity: 0.05 }, 1000);
                 $('.main__more').animate({ opacity: 0.4 }, 1000);
                 $('.scrollbar__line').animate({ left: '85.8%' }, 2000);
+                time += 2000;
             }
             if (newLeft != 0) {
                 $('.main__more').animate({ opacity: 0.05 }, 1000);
                 $('.main__more').animate({ opacity: 0.4 }, 1000);
                 $('.scrollbar__line').animate({ left: '0%' }, 2000);
+                time += 2000;
             }
             $('.main__more').animate({ opacity: 0.05 }, 1000);
             $('.main__more').animate({ opacity: 0.4 }, 1000);
-            $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000);
-            idTimer = setTimeout(tick, 36000);
+            $('.scrollbar__line').animate({ left: newLeft + '%' }, 2000);
+            idTimer = setTimeout(tick, 32000 + time);
         }, 30000);
     };
     timer();
