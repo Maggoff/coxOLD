@@ -220,6 +220,79 @@ body{
   text-decoration: none;
 }
 
+.how__container{
+  width: 60%;
+}
+
+.how__box{
+  display: flex;
+  align-items: center;
+}
+
+.how__box .main__title{
+  width: 100%;
+}
+
+.how__page{
+  display: flex;
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.how__page__prev,
+.how__page__next{
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.how__page__prev:hover,
+.how__page__next:hover{
+  color: #fa8c16
+}
+
+.how__page__text{
+  margin: 0 5px;
+}
+
+.how__form{
+  margin-top: 130px;
+  width: 100%;
+}
+
+.how__form__text{
+  width: 100%;
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+  padding: 10px 0;
+  color: #fa8c16;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: 25px;
+}
+
+.how__form__text::-webkit-input-placeholder{
+  color: #fa8c16;
+}
+
+.how__form__btn{
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  text-decoration: none;
+  padding-bottom: 6px;
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+  cursor: pointer;
+  outline: none;
+}
+
 .scrollbar{
   margin: 0 10%;
   position: absolute;
