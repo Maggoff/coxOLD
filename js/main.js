@@ -14,7 +14,7 @@ $(document).ready(function () {
         }
     }
 
-    
+
 
     function timer() {
         idTimer = setTimeout(function tick() {
@@ -70,17 +70,17 @@ $(document).ready(function () {
         timer();
         console.log(newLeft);
 
-        if(disableClick === false){
+        if (disableClick === false) {
             disableClick = true;
             if (newLeft <= 3) {
                 newLeft = (6 * (100 / 7));
-                $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000, function(){
+                $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000, function () {
                     disableClick = false;
                 });
                 console.log(newLeft);
             } else {
                 newLeft -= (100 / 7);
-                $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000, function(){
+                $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000, function () {
                     disableClick = false;
                 });
                 console.log(newLeft);
@@ -101,5 +101,15 @@ $(document).ready(function () {
         newLeft = (6 * (100 / 7));
         $('.scrollbar__line').animate({ left: newLeft + '%' }, 1000);
     });
+
+    let form = document.getElementById('form');
+    console.log(form.innerHTML)
+
+    $('#btn').on('click', function () {
+        $(form).finish().animate({ opacity: 0 }, 200, function () {
+            form.innerHTML = '<input type="text" class="how__form__text" placeholder="Tell us"><a href="#" class="how__form__btn hover">Next step 22</a>';
+        })
+        $(form).animate({opacity: 1}, 200);
+    })
 
 });
